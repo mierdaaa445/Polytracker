@@ -9,8 +9,8 @@ import requests
 API = "https://data-api.polymarket.com/v2"
 DAYS = int(os.environ.get("DAYS", "30"))
 MIN_USD = float(os.environ.get("MIN_USD", "50"))
-MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.30"))
-MAX_PRICE = float(os.environ.get("MAX_PRICE", "0.70"))
+MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.20"))
+MAX_PRICE = float(os.environ.get("MAX_PRICE", "0.80"))
 MAX_SLIP = float(os.environ.get("MAX_SLIP", "0.03"))
 DELAYS = [int(x) for x in os.environ.get("DELAYS", "5,20").split(",")]  # minutes between their buy and yours
 MAX_TRADES_PER_TRADER = int(os.environ.get("MAX_TRADES", "40"))
@@ -127,7 +127,7 @@ def main():
         buys = [b for b in buys if b["usdc_size"] >= MIN_USD]
         all_buys[t["name"]] = buys
         in_range = [b for b in buys if MIN_PRICE <= b["price"] <= MAX_PRICE]
-        skipped["outside 30-70c"] += len(buys) - len(in_range)
+        skipped[f"outside {MIN_PRICE:.2f}-{MAX_PRICE:.2f}"] += len(buys) - len(in_range)
         in_range.sort(key=lambda b: b["timestamp"], reverse=True)
         per_trader_buys[t["name"]] = len(in_range)
         for b in in_range[:MAX_TRADES_PER_TRADER]:
@@ -177,9 +177,13 @@ def main():
                   f"- Open positions marked to market: ${open_pnl:,.0f}", ""]
         summary.append(f"{d}min: {n} resolved, P&L ${pnl:,.0f} ({roi:+.1%}), open ${open_pnl:,.0f}")
     lines += ["## Skipped"] + [f"- {k}: {v}" for k, v in sorted(skipped.items())]
-    lines += ["", "## Per-trader qualifying buys (in 30-70c range)"] + [f"- {k}: {v}" for k, v in per_trader_buys.items()]
+    lines += ["", f"## Per-trader qualifying buys ({MIN_PRICE:.2f}-{MAX_PRICE:.2f} range)"] + [f"- {k}: {v}" for k, v in per_trader_buys.items()]
 
-    lines += consensus_section(all_buys, now)
+    Path("backtest.md").write_text("\n".join(lines))  # save main results first
+    try:
+        lines += consensus_section(all_buys, now)
+    except Exception as e:
+        lines += ["", f"## Consensus section failed: {type(e).__name__}: {e}"]
     lines += ["", "Caveats: resolved trades are biased toward short-dated markets; open trades are not final; "
               "sample is small; past results do not predict future results."]
     Path("backtest.md").write_text("\n".join(lines))
