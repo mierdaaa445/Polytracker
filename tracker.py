@@ -14,7 +14,7 @@ MAX_SLIP = float(os.environ.get("MAX_SLIP", "0.03"))        # skip if live price
 MIN_TRADERS = int(os.environ.get("MIN_TRADERS", "2"))
 WINDOW_HOURS = float(os.environ.get("WINDOW_HOURS", "6"))
 CONS_MIN_PRICE = float(os.environ.get("CONS_MIN_PRICE", "0.20"))
-CONS_MAX_PRICE = float(os.environ.get("CONS_MAX_PRICE", "0.80"))
+CONS_MAX_PRICE = float(os.environ.get("CONS_MAX_PRICE", "0.70"))
 CONS_SLIP = float(os.environ.get("CONS_SLIP", "0.06"))
 STATE = Path("seen.json")
 
@@ -67,13 +67,30 @@ def combine(fills):
     return list(groups.values())
 
 
+def bet_type(title):
+    tl = (title or "").lower()
+    if "spread" in tl:
+        return "SPREAD"
+    if "o/u" in tl or "over/under" in tl or "total" in tl:
+        return "TOTAL"
+    if " vs" in tl:
+        return "MONEYLINE"
+    return "BET"
+
+
+def american(p):
+    if p <= 0 or p >= 1:
+        return "n/a"
+    return f"{-100*p/(1-p):.0f}" if p >= 0.5 else f"+{100*(1-p)/p:.0f}"
+
+
 def notify(name, t, group):
     """group = names of all watchlisted traders who bought this outcome inside the window."""
     price = float(t.get("price") or 0)
     usd = float(t.get("usdc_size") or 0)
     n = t.get("_n", 1)
     fills = f", {n} fills combined" if n > 1 else ""
-    base = f"{t.get('outcome', '?')} @ {price:.2f}  (${usd:,.0f}{fills})\n{t.get('title', '')}"
+    base = f"{t.get('outcome', '?')} @ {price:.2f} ({american(price)})  (${usd:,.0f}{fills})\n[{bet_type(t.get('title'))}] {t.get('title', '')}"
     if t["side"] == "SELL":
         push(f"EXIT: {name} SOLD", f"SELL {base}", t, 5)
         return
