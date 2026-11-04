@@ -2,18 +2,18 @@
  {
   "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
   "name": "TheReturnOfDarthMaul",
-  "score": 1.8843,
-  "roi": 0.489,
+  "score": 1.8872,
+  "roi": 0.49,
   "win": 0.68,
-  "pnl": 458814
+  "pnl": 459453
  },
  {
   "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
   "name": "flawfence",
-  "score": 1.3552,
+  "score": 1.3533,
   "roi": 0.353,
   "win": 0.665,
-  "pnl": 593342
+  "pnl": 592559
  },
  {
   "wallet": "0xe18ecc345e00ee7c4f2d1f676f3dd2acb112f826",
@@ -29,7 +29,7 @@
   "score": 1.3118,
   "roi": 0.304,
   "win": 0.73,
-  "pnl": 803485
+  "pnl": 803505
  },
  {
   "wallet": "0xb7271c112cbd83eb4c1ef1b554ff963604ae2a9d",
@@ -42,18 +42,18 @@
  {
   "wallet": "0x2879ded7fe05df00eddbb2fba412a0d30964411a",
   "name": "chongchong37",
-  "score": 0.852,
-  "roi": 0.176,
+  "score": 0.849,
+  "roi": 0.175,
   "win": 0.867,
-  "pnl": 388705
+  "pnl": 387433
  },
  {
   "wallet": "0xb4f978be63cdf75554b0b46a4262a6db597cc9a7",
   "name": "0xb4F978BE63cDF75554b0B46a4262a6dB597cc9A7-1779258330186",
-  "score": 0.6207,
-  "roi": 0.117,
+  "score": 0.6217,
+  "roi": 0.118,
   "win": 0.9,
-  "pnl": 752180
+  "pnl": 754462
  },
  {
   "wallet": "0x0259b2054f046fe0ee8f3e075fdb85fc3ba9769e",
@@ -66,17 +66,17 @@
  {
   "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
   "name": "juice-fruit",
-  "score": 0.5346,
-  "roi": 0.095,
-  "win": 0.965,
-  "pnl": 634144
+  "score": 0.5485,
+  "roi": 0.097,
+  "win": 0.966,
+  "pnl": 692008
  },
  {
   "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
   "name": "dromedaryy",
-  "score": 0.5163,
-  "roi": 0.126,
+  "score": 0.508,
+  "roi": 0.124,
   "win": 0.734,
-  "pnl": 396706
+  "pnl": 390823
  }
 ]
