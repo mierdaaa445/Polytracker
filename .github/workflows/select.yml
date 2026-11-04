@@ -1,0 +1,20 @@
+name: select
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 select_traders.py
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TOP_N: "10"
+      - run: |
+          git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add watchlist.json
+          git diff --cached --quiet || (git commit -m "watchlist" && git pull --rebase && git push)
