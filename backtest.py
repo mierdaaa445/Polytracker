@@ -60,12 +60,64 @@ def resolutions(tokens):
     return res
 
 
+def consensus_section(all_buys, now, window_h=6, max_signals=120):
+    """2+ watchlist traders buy the same outcome within window_h hours. Does price still matter?"""
+    by_token = defaultdict(list)
+    meta = {}
+    for name, buys in all_buys.items():
+        for b in buys:
+            by_token[b["token_id"]].append((b["timestamp"], name))
+            meta[b["token_id"]] = b.get("title", "")
+    signals = []
+    for tok, ev in by_token.items():
+        ev.sort()
+        for i in range(len(ev)):
+            group = {n for ts, n in ev if ev[i][0] - window_h * 3600 <= ts <= ev[i][0]}
+            if len(group) >= 2:
+                signals.append((ev[i][0], tok))
+                break
+    signals.sort(reverse=True)
+    signals = signals[:max_signals]
+    out = ["", "## Consensus signals (2+ watchlist traders, same outcome, within 6h)",
+           f"Signals found: {len(signals)}. Entry = price {DELAYS[-1]} min after the 2nd trader. No price cap applied, grouped by entry price:", ""]
+    if not signals:
+        return out + ["- none in this period"]
+    entries = {}
+    for ts, tok in signals:
+        t_entry = ts + DELAYS[-1] * 60
+        if t_entry > now - 300:
+            continue
+        p = price_at(tok, t_entry)
+        time.sleep(0.1)
+        if p and p > 0.01:
+            entries[tok] = p
+    res = resolutions(entries.keys()) if entries else {}
+    buckets = [("under 50c", 0, .5), ("50-70c", .5, .7), ("70-85c", .7, .85), ("over 85c", .85, 1.01)]
+    for label, lo, hi in buckets:
+        won = lost = 0
+        pnl = 0.0
+        for tok, p in entries.items():
+            if not (lo <= p < hi):
+                continue
+            r = res.get(tok)
+            if r and r.get("resolved") and r.get("final_price") is not None:
+                g = STAKE * (float(r["final_price"]) / p - 1)
+                pnl += g
+                won += g > 0
+                lost += g <= 0
+        n = won + lost
+        out.append(f"- Entry {label}: {n} resolved, {won} won / {lost} lost, P&L ${pnl:,.0f}"
+                   + (f" ({pnl/(STAKE*n):+.1%})" if n else ""))
+    return out
+
+
 def main():
     wl = json.loads(Path("watchlist.json").read_text())
     now = time.time()
     trades = []  # (trader, delay, entry_price, token, ts, stake_pnl placeholder)
     skipped = defaultdict(int)
     per_trader_buys = {}
+    all_buys = {}
     for t in wl:
         try:
             buys = recent_buys(t["wallet"])
@@ -73,6 +125,7 @@ def main():
             print("fail", t["name"], e, file=sys.stderr)
             continue
         buys = [b for b in buys if b["usdc_size"] >= MIN_USD]
+        all_buys[t["name"]] = buys
         in_range = [b for b in buys if MIN_PRICE <= b["price"] <= MAX_PRICE]
         skipped["outside 30-70c"] += len(buys) - len(in_range)
         in_range.sort(key=lambda b: b["timestamp"], reverse=True)
@@ -125,6 +178,8 @@ def main():
         summary.append(f"{d}min: {n} resolved, P&L ${pnl:,.0f} ({roi:+.1%}), open ${open_pnl:,.0f}")
     lines += ["## Skipped"] + [f"- {k}: {v}" for k, v in sorted(skipped.items())]
     lines += ["", "## Per-trader qualifying buys (in 30-70c range)"] + [f"- {k}: {v}" for k, v in per_trader_buys.items()]
+
+    lines += consensus_section(all_buys, now)
     lines += ["", "Caveats: resolved trades are biased toward short-dated markets; open trades are not final; "
               "sample is small; past results do not predict future results."]
     Path("backtest.md").write_text("\n".join(lines))
