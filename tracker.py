@@ -7,8 +7,8 @@ API = "https://data-api.polymarket.com/v2"
 TOPIC = os.environ["NTFY_TOPIC"]
 MIN_USD = float(os.environ.get("MIN_USD", "0"))             # ignore tiny trades
 # single-trader signals (strict)
-MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.30"))
-MAX_PRICE = float(os.environ.get("MAX_PRICE", "0.70"))
+MIN_PRICE = float(os.environ.get("MIN_PRICE", "0.20"))
+MAX_PRICE = float(os.environ.get("MAX_PRICE", "0.80"))
 MAX_SLIP = float(os.environ.get("MAX_SLIP", "0.03"))        # skip if live price > 3c above their entry
 # consensus signals: 2+ watchlisted traders buy the same outcome within the window (looser)
 MIN_TRADERS = int(os.environ.get("MIN_TRADERS", "2"))
@@ -48,11 +48,32 @@ def push(title, msg, t, priority):
         "priority": priority}, timeout=20)
 
 
+def combine(fills):
+    """Merge fills of the same outcome+side (one order is often split into many fills)."""
+    groups = {}
+    for t in fills:
+        k = (t["token_id"], t["side"])
+        size, usd = float(t.get("size") or 0), float(t.get("usdc_size") or 0)
+        if k not in groups:
+            groups[k] = dict(t, size=size, usdc_size=usd, _n=1)
+        else:
+            g = groups[k]
+            g["size"] += size
+            g["usdc_size"] += usd
+            g["_n"] += 1
+    for g in groups.values():
+        if g["size"] > 0 and g["usdc_size"] > 0:
+            g["price"] = g["usdc_size"] / g["size"]  # average price paid
+    return list(groups.values())
+
+
 def notify(name, t, group):
     """group = names of all watchlisted traders who bought this outcome inside the window."""
     price = float(t.get("price") or 0)
     usd = float(t.get("usdc_size") or 0)
-    base = f"{t.get('outcome', '?')} @ {price:.2f}  (${usd:,.0f})\n{t.get('title', '')}"
+    n = t.get("_n", 1)
+    fills = f", {n} fills combined" if n > 1 else ""
+    base = f"{t.get('outcome', '?')} @ {price:.2f}  (${usd:,.0f}{fills})\n{t.get('title', '')}"
     if t["side"] == "SELL":
         push(f"EXIT: {name} SOLD", f"SELL {base}", t, 5)
         return
@@ -102,13 +123,17 @@ def main():
     for wallet, rows in rows_by.items():
         name = traders[wallet]
         quiet = wallet not in seeded  # newly added trader: record history, don't alert
+        fresh = []
         for t in reversed(rows):
             key = f"{t['transaction_hash']}:{t['token_id']}:{t['size']}"
             if key in seen:
                 continue
             seen.add(key)
-            if not quiet and float(t.get("usdc_size") or 0) >= MIN_USD:
-                notify(name, t, sorted(buyers.get(t["token_id"], {name})))
+            fresh.append(t)
+        if not quiet:
+            for t in combine(fresh):
+                if float(t.get("usdc_size") or 0) >= MIN_USD:
+                    notify(name, t, sorted(buyers.get(t["token_id"], {name})))
         seeded.add(wallet)
     STATE.write_text(json.dumps({"seen": sorted(seen)[-5000:], "seeded": sorted(seeded)}))
 
