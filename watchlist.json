@@ -1,82 +1,82 @@
 [
  {
-  "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
-  "name": "TheReturnOfDarthMaul",
-  "score": 1.6988,
-  "roi": 0.443,
-  "win": 0.68,
-  "pnl": 439232
- },
- {
   "wallet": "0xe18ecc345e00ee7c4f2d1f676f3dd2acb112f826",
   "name": "ArielFilipino",
-  "score": 1.3572,
-  "roi": 0.257,
+  "score": 1.526,
+  "roi": 0.288,
   "win": 0.916,
-  "pnl": 586731
+  "pnl": 610780
+ },
+ {
+  "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
+  "name": "flawfence",
+  "score": 1.4661,
+  "roi": 0.383,
+  "win": 0.66,
+  "pnl": 629087
  },
  {
   "wallet": "0xc4d1a863e9cc45d02ba22d3a1ae9ba7822018ce8",
   "name": "rdba",
-  "score": 1.3109,
-  "roi": 0.304,
+  "score": 1.3152,
+  "roi": 0.305,
   "win": 0.73,
-  "pnl": 803015
+  "pnl": 805475
  },
  {
-  "wallet": "0x83720820a8aa6c3f20ad71850e7a1a17d16c5223",
-  "name": "Jsram",
-  "score": 0.9887,
-  "roi": 0.298,
-  "win": 0.57,
-  "pnl": 674599
+  "wallet": "0xa19cbababc312f9df185e49d7004c249ed1ade6b",
+  "name": "Tokor",
+  "score": 1.2971,
+  "roi": 0.382,
+  "win": 0.59,
+  "pnl": 560345
  },
  {
-  "wallet": "0x8c0b024c17831a0dde038547b7e791ae6a0d7aa5",
-  "name": "THEHIGHLIFE",
-  "score": 0.9674,
-  "roi": 0.198,
-  "win": 0.85,
-  "pnl": 577184
+  "wallet": "0x60a92c8620846d81f5ea17b0564e0d4b7c545a71",
+  "name": "paddaa",
+  "score": 1.2192,
+  "roi": 0.321,
+  "win": 0.655,
+  "pnl": 626171
  },
  {
-  "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
-  "name": "dromedaryy",
-  "score": 0.7938,
-  "roi": 0.186,
-  "win": 0.741,
-  "pnl": 587601
- },
- {
-  "wallet": "0xb4f978be63cdf75554b0b46a4262a6db597cc9a7",
-  "name": "0xb4F978BE63cDF75554b0B46a4262a6dB597cc9A7-1779258330186",
-  "score": 0.6335,
-  "roi": 0.12,
-  "win": 0.89,
-  "pnl": 820108
+  "wallet": "0x43372356634781eea88d61bbdd7824cdce958882",
+  "name": "Anjun",
+  "score": 0.766,
+  "roi": 0.173,
+  "win": 0.775,
+  "pnl": 508989
  },
  {
   "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
   "name": "juice-fruit",
-  "score": 0.6217,
-  "roi": 0.109,
+  "score": 0.6913,
+  "roi": 0.121,
   "win": 0.968,
-  "pnl": 751259
+  "pnl": 831182
  },
  {
-  "wallet": "0x0259b2054f046fe0ee8f3e075fdb85fc3ba9769e",
-  "name": "fantasy7788",
-  "score": 0.4624,
-  "roi": 0.083,
-  "win": 0.982,
-  "pnl": 461346
+  "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
+  "name": "dromedaryy",
+  "score": 0.6327,
+  "roi": 0.151,
+  "win": 0.735,
+  "pnl": 483856
  },
  {
   "wallet": "0x9b89ef1f344d3e17b37ccdff3bccf62d04f04244",
   "name": "Woaifacai",
-  "score": 0.1948,
-  "roi": 0.058,
+  "score": 0.1911,
+  "roi": 0.057,
   "win": 0.575,
-  "pnl": 670838
+  "pnl": 659618
+ },
+ {
+  "wallet": "0xf28e42d20e4826f2b10a24bc952001697947cab2",
+  "name": "ethanaz",
+  "score": 0.1701,
+  "roi": 0.04,
+  "win": 0.765,
+  "pnl": 365869
  }
 ]
