@@ -2,81 +2,81 @@
  {
   "wallet": "0x63d43bbb87f85af03b8f2f9e2fad7b54334fa2f1",
   "name": "wokerjoesleeper",
-  "score": 9.8675,
-  "roi": 2.136,
+  "score": 9.8759,
+  "roi": 2.138,
   "win": 0.8,
-  "pnl": 595289
- },
- {
-  "wallet": "0xe18ecc345e00ee7c4f2d1f676f3dd2acb112f826",
-  "name": "ArielFilipino",
-  "score": 1.7002,
-  "roi": 0.321,
-  "win": 0.916,
-  "pnl": 615987
+  "pnl": 593634
  },
  {
   "wallet": "0xb7271c112cbd83eb4c1ef1b554ff963604ae2a9d",
   "name": "Elaran1993",
-  "score": 1.6619,
-  "roi": 0.445,
+  "score": 1.6294,
+  "roi": 0.437,
   "win": 0.66,
-  "pnl": 457099
+  "pnl": 447334
  },
  {
   "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
   "name": "flawfence",
-  "score": 1.3856,
-  "roi": 0.363,
+  "score": 1.4763,
+  "roi": 0.387,
   "win": 0.66,
-  "pnl": 597480
+  "pnl": 599160
+ },
+ {
+  "wallet": "0xe18ecc345e00ee7c4f2d1f676f3dd2acb112f826",
+  "name": "ArielFilipino",
+  "score": 1.4147,
+  "roi": 0.27,
+  "win": 0.916,
+  "pnl": 516718
  },
  {
   "wallet": "0xc4d1a863e9cc45d02ba22d3a1ae9ba7822018ce8",
   "name": "rdba",
-  "score": 1.315,
+  "score": 1.3156,
   "roi": 0.305,
   "win": 0.73,
-  "pnl": 805334
- },
- {
-  "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
-  "name": "dromedaryy",
-  "score": 0.9557,
-  "roi": 0.222,
-  "win": 0.735,
-  "pnl": 718323
+  "pnl": 805679
  },
  {
   "wallet": "0x83720820a8aa6c3f20ad71850e7a1a17d16c5223",
   "name": "Jsram",
-  "score": 0.9455,
-  "roi": 0.28,
+  "score": 0.9691,
+  "roi": 0.288,
   "win": 0.575,
-  "pnl": 739700
+  "pnl": 713136
+ },
+ {
+  "wallet": "0x8c0b024c17831a0dde038547b7e791ae6a0d7aa5",
+  "name": "THEHIGHLIFE",
+  "score": 0.8717,
+  "roi": 0.18,
+  "win": 0.85,
+  "pnl": 492346
+ },
+ {
+  "wallet": "0xc95ed399d2fbaec9461f2abd70e0d96df1921288",
+  "name": "Siddhartha1",
+  "score": 0.838,
+  "roi": 0.162,
+  "win": 0.924,
+  "pnl": 394492
  },
  {
   "wallet": "0x43372356634781eea88d61bbdd7824cdce958882",
   "name": "Anjun",
-  "score": 0.7217,
-  "roi": 0.163,
-  "win": 0.78,
-  "pnl": 464773
+  "score": 0.7059,
+  "roi": 0.162,
+  "win": 0.77,
+  "pnl": 452100
  },
  {
-  "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
-  "name": "juice-fruit",
-  "score": 0.6847,
-  "roi": 0.12,
-  "win": 0.97,
-  "pnl": 792588
- },
- {
-  "wallet": "0xc9bfc7986767173b4f1c3fc9b2c6b255fc7381c0",
-  "name": "0xC9BFc7986767173b4f1c3FC9B2c6b255F",
-  "score": 0.5796,
-  "roi": 0.185,
-  "win": 0.55,
-  "pnl": 481973
+  "wallet": "0x448861155279dbf833d041b963e3ac854599e319",
+  "name": "0x448861155279dbf833d041b963e3ac854599e319",
+  "score": 0.6848,
+  "roi": 0.199,
+  "win": 0.585,
+  "pnl": 780747
  }
 ]
