@@ -2,18 +2,26 @@
  {
   "wallet": "0x63d43bbb87f85af03b8f2f9e2fad7b54334fa2f1",
   "name": "wokerjoesleeper",
-  "score": 10.4238,
-  "roi": 2.257,
+  "score": 10.5242,
+  "roi": 2.278,
   "win": 0.8,
-  "pnl": 593895
+  "pnl": 595211
  },
  {
   "wallet": "0xb7271c112cbd83eb4c1ef1b554ff963604ae2a9d",
   "name": "Elaran1993",
-  "score": 1.9827,
-  "roi": 0.535,
+  "score": 2.0803,
+  "roi": 0.561,
   "win": 0.66,
-  "pnl": 408110
+  "pnl": 411483
+ },
+ {
+  "wallet": "0xc4d1a863e9cc45d02ba22d3a1ae9ba7822018ce8",
+  "name": "rdba",
+  "score": 1.329,
+  "roi": 0.308,
+  "win": 0.73,
+  "pnl": 798430
  },
  {
   "wallet": "0x5815db9fdf0e0ffdc1d1f759916b221339570ae7",
@@ -24,44 +32,36 @@
   "pnl": 753665
  },
  {
-  "wallet": "0xc4d1a863e9cc45d02ba22d3a1ae9ba7822018ce8",
-  "name": "rdba",
-  "score": 1.311,
-  "roi": 0.304,
-  "win": 0.73,
-  "pnl": 803043
+  "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
+  "name": "flawfence",
+  "score": 1.232,
+  "roi": 0.329,
+  "win": 0.66,
+  "pnl": 472538
  },
  {
   "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
   "name": "TheReturnOfDarthMaul",
-  "score": 1.0725,
-  "roi": 0.281,
-  "win": 0.68,
-  "pnl": 415285
- },
- {
-  "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
-  "name": "flawfence",
-  "score": 0.9977,
-  "roi": 0.27,
-  "win": 0.66,
-  "pnl": 388427
+  "score": 1.1371,
+  "roi": 0.289,
+  "win": 0.7,
+  "pnl": 422717
  },
  {
   "wallet": "0xb4f978be63cdf75554b0b46a4262a6db597cc9a7",
   "name": "0xb4F978BE63cDF75554b0B46a4262a6dB597cc9A7-1779258330186",
-  "score": 0.8308,
-  "roi": 0.165,
-  "win": 0.84,
-  "pnl": 997548
+  "score": 0.6915,
+  "roi": 0.138,
+  "win": 0.85,
+  "pnl": 819394
  },
  {
   "wallet": "0x448861155279dbf833d041b963e3ac854599e319",
   "name": "0x448861155279dbf833d041b963e3ac854599e319",
-  "score": 0.6492,
-  "roi": 0.179,
+  "score": 0.6513,
+  "roi": 0.18,
   "win": 0.61,
-  "pnl": 878610
+  "pnl": 881989
  },
  {
   "wallet": "0x0259b2054f046fe0ee8f3e075fdb85fc3ba9769e",
@@ -72,11 +72,11 @@
   "pnl": 1030150
  },
  {
-  "wallet": "0xebfdb8164f0e0748818d6c7a9ac85a323267fd63",
-  "name": "robustmst",
-  "score": 0.3416,
-  "roi": 0.065,
-  "win": 0.886,
-  "pnl": 779411
+  "wallet": "0xf28e42d20e4826f2b10a24bc952001697947cab2",
+  "name": "ethanaz",
+  "score": 0.2425,
+  "roi": 0.055,
+  "win": 0.775,
+  "pnl": 445967
  }
 ]
