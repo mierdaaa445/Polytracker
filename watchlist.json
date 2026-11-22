@@ -2,42 +2,58 @@
  {
   "wallet": "0x63d43bbb87f85af03b8f2f9e2fad7b54334fa2f1",
   "name": "wokerjoesleeper",
-  "score": 10.4202,
-  "roi": 2.27,
-  "win": 0.795,
-  "pnl": 593473
+  "score": 10.3139,
+  "roi": 2.261,
+  "win": 0.79,
+  "pnl": 593714
+ },
+ {
+  "wallet": "0xfed8ff0b541ce9a66d632aedebe81bdd1b2c4388",
+  "name": "JudgeLance",
+  "score": 3.4608,
+  "roi": 0.917,
+  "win": 0.674,
+  "pnl": 398996
  },
  {
   "wallet": "0xb7271c112cbd83eb4c1ef1b554ff963604ae2a9d",
   "name": "Elaran1993",
-  "score": 2.0771,
-  "roi": 0.563,
+  "score": 2.0474,
+  "roi": 0.556,
   "win": 0.66,
-  "pnl": 392318
+  "pnl": 377332
  },
  {
   "wallet": "0xc4d1a863e9cc45d02ba22d3a1ae9ba7822018ce8",
   "name": "rdba",
-  "score": 1.3396,
-  "roi": 0.311,
+  "score": 1.345,
+  "roi": 0.312,
   "win": 0.73,
-  "pnl": 804394
+  "pnl": 807429
  },
  {
   "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
   "name": "flawfence",
-  "score": 1.2455,
-  "roi": 0.333,
+  "score": 1.253,
+  "roi": 0.336,
   "win": 0.66,
-  "pnl": 467746
+  "pnl": 455036
  },
  {
   "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
   "name": "TheReturnOfDarthMaul",
-  "score": 1.0706,
-  "roi": 0.274,
+  "score": 1.1916,
+  "roi": 0.303,
   "win": 0.7,
-  "pnl": 385171
+  "pnl": 420371
+ },
+ {
+  "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
+  "name": "juice-fruit",
+  "score": 0.99,
+  "roi": 0.169,
+  "win": 0.973,
+  "pnl": 1084423
  },
  {
   "wallet": "0x5815db9fdf0e0ffdc1d1f759916b221339570ae7",
@@ -50,33 +66,17 @@
  {
   "wallet": "0x9f15613ebf1f36d4bc679e1211d1fc567cf9bdb3",
   "name": "0x9f15613ebf1f36d4bc679e1211d1fc567cf9bdb3",
-  "score": 0.6583,
-  "roi": 0.15,
-  "win": 0.745,
-  "pnl": 756386
- },
- {
-  "wallet": "0x448861155279dbf833d041b963e3ac854599e319",
-  "name": "0x448861155279dbf833d041b963e3ac854599e319",
-  "score": 0.6503,
-  "roi": 0.18,
-  "win": 0.61,
-  "pnl": 868720
+  "score": 0.5752,
+  "roi": 0.131,
+  "win": 0.755,
+  "pnl": 664656
  },
  {
   "wallet": "0x0259b2054f046fe0ee8f3e075fdb85fc3ba9769e",
   "name": "fantasy7788",
-  "score": 0.5706,
+  "score": 0.573,
   "roi": 0.097,
   "win": 0.98,
-  "pnl": 1011150
- },
- {
-  "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
-  "name": "dromedaryy",
-  "score": 0.561,
-  "roi": 0.133,
-  "win": 0.747,
-  "pnl": 456664
+  "pnl": 1016452
  }
 ]
