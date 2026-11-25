@@ -2,81 +2,57 @@
  {
   "wallet": "0x63d43bbb87f85af03b8f2f9e2fad7b54334fa2f1",
   "name": "wokerjoesleeper",
-  "score": 10.4049,
-  "roi": 2.281,
-  "win": 0.79,
-  "pnl": 593546
- },
- {
-  "wallet": "0xe18ecc345e00ee7c4f2d1f676f3dd2acb112f826",
-  "name": "ArielFilipino",
-  "score": 3.9625,
-  "roi": 0.784,
-  "win": 0.916,
-  "pnl": 328176
+  "score": 18.616,
+  "roi": 4.033,
+  "win": 0.8,
+  "pnl": 588149
  },
  {
   "wallet": "0xfed8ff0b541ce9a66d632aedebe81bdd1b2c4388",
   "name": "JudgeLance",
-  "score": 2.4522,
-  "roi": 0.614,
+  "score": 2.4214,
+  "roi": 0.607,
   "win": 0.702,
-  "pnl": 486888
- },
- {
-  "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
-  "name": "TheReturnOfDarthMaul",
-  "score": 1.4703,
-  "roi": 0.368,
-  "win": 0.7,
-  "pnl": 502032
+  "pnl": 486846
  },
  {
   "wallet": "0xc4d1a863e9cc45d02ba22d3a1ae9ba7822018ce8",
   "name": "rdba",
-  "score": 1.3485,
-  "roi": 0.313,
+  "score": 1.4515,
+  "roi": 0.335,
   "win": 0.73,
-  "pnl": 809391
- },
- {
-  "wallet": "0x23d81ba9371e576015c1e562db09c689f56b0288",
-  "name": "flawfence",
-  "score": 1.2476,
-  "roi": 0.338,
-  "win": 0.655,
-  "pnl": 438415
+  "pnl": 866839
  },
  {
   "wallet": "0x0259b2054f046fe0ee8f3e075fdb85fc3ba9769e",
   "name": "fantasy7788",
-  "score": 0.5185,
-  "roi": 0.088,
+  "score": 0.6031,
+  "roi": 0.101,
   "win": 0.981,
-  "pnl": 975062
- },
- {
-  "wallet": "0xee00ba338c59557141789b127927a55f5cc5cea1",
-  "name": "S-Works",
-  "score": 0.4103,
-  "roi": 0.104,
-  "win": 0.67,
-  "pnl": 815114
- },
- {
-  "wallet": "0xf28e42d20e4826f2b10a24bc952001697947cab2",
-  "name": "ethanaz",
-  "score": 0.3975,
-  "roi": 0.088,
-  "win": 0.78,
-  "pnl": 615407
+  "pnl": 1155300
  },
  {
   "wallet": "0x0224bb9eb0a5c9fd261ac9123a72cbdd5748292a",
   "name": "zb8",
-  "score": 0.3808,
-  "roi": 0.086,
+  "score": 0.5198,
+  "roi": 0.116,
   "win": 0.795,
-  "pnl": 355083
+  "pnl": 445007
+ },
+ {
+  "wallet": "0xf28e42d20e4826f2b10a24bc952001697947cab2",
+  "name": "ethanaz",
+  "score": 0.4876,
+  "roi": 0.107,
+  "win": 0.78,
+  "pnl": 691910
+ },
+ {
+  "wallet": "0xee00ba338c59557141789b127927a55f5cc5cea1",
+  "name": "S-Works",
+  "score": 0.3832,
+  "roi": 0.097,
+  "win": 0.67,
+  "pnl": 744224
  }
 ]
